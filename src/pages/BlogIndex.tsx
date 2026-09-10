@@ -8,8 +8,8 @@ export function BlogIndex() {
   return (
     <>
       <Seo
-        title="Travel nausea journal — motion sickness patches and P6 bands"
-        description="Guides on motion sickness patches, car and sea sickness, flying, and how P6 kids bands fit a family travel kit."
+        title="Travel nausea journal — motion sickness patch guides"
+        description="Guides on how to use a motion sickness patch, car and sea sickness, flying, and when a P6 wristband or kids format fits."
         path="/blog"
       />
 
@@ -23,33 +23,34 @@ export function BlogIndex() {
         <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             {
-              src: 'assets/p6/kids-bands-pink-blue.jpg',
-              alt: 'P6 kids nausea relief bands',
-            },
-            {
-              src: 'assets/p6/kids-patches-hero.jpg',
-              alt: 'P6 kids motion sickness patches',
-            },
-            {
-              src: 'assets/p6/adult-bands-white.jpg',
-              alt: 'P6 adult nausea relief bands',
+              src: 'assets/product-sunrise.png',
+              alt: 'motion patch box',
             },
             {
               src: 'assets/notebook-flatlay.png',
-              alt: 'motion patch box and sachets',
+              alt: 'motion patch box and sachets packed for travel',
+            },
+            {
+              src: 'assets/ingredients-ginger.png',
+              alt: 'Ginger extract used in motion patch',
+            },
+            {
+              src: 'assets/hero-before-after.png',
+              alt: 'motion patch sachets next to the box',
             },
           ].map((shot) => (
             <img
               key={shot.src}
               src={asset(shot.src)}
               alt={shot.alt}
-              className="aspect-square w-full rounded-2xl border border-line bg-white object-contain p-2"
+              className="aspect-square w-full rounded-2xl border border-line bg-white object-cover"
             />
           ))}
         </div>
         <p className="mt-4 max-w-2xl text-lg text-muted">
-          How to wear a nausea relief patch, when to pack a wristband instead,
-          and what{' '}
+          How to wear a nausea relief patch on cars, boats, and flights. The
+          guides lead with motion patch — the adult travel patch. Wristbands
+          and kids formats from{' '}
           <a
             className="font-extrabold text-navy underline decoration-yellow decoration-4 underline-offset-4"
             href={P6.home}
@@ -58,7 +59,8 @@ export function BlogIndex() {
           >
             P6 Health
           </a>{' '}
-          makes for kids. Not medical advice — follow each product label.
+          show up later when they actually fit. Not medical advice — follow
+          each product label.
         </p>
 
         <ul className="mt-12 grid gap-8 md:grid-cols-2">

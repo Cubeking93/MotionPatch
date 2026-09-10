@@ -51,37 +51,29 @@ export function BlogPost() {
           <BlogBlocks blocks={post.body} />
 
           <aside className="mt-12 rounded-2xl bg-mist p-6">
-            <div className="mb-5 grid grid-cols-3 gap-2">
-              <img
-                src={asset('assets/p6/kids-bands-royal.jpg')}
-                alt="P6 kids bands"
-                className="aspect-square w-full rounded-xl bg-white object-contain p-1"
-              />
-              <img
-                src={asset('assets/p6/kids-patches-hero.jpg')}
-                alt="P6 kids patches"
-                className="aspect-square w-full rounded-xl bg-white object-contain p-1"
-              />
-              <img
-                src={asset('assets/p6/adult-bands-white.jpg')}
-                alt="P6 adult bands"
-                className="aspect-square w-full rounded-xl bg-white object-contain p-1"
-              />
-            </div>
+            <img
+              src={asset('assets/product-sunrise.png')}
+              alt="motion patch box"
+              className="mb-5 w-full rounded-xl"
+            />
             <h2 className="text-xl font-extrabold text-navy">
-              Also from the P6 family
+              Shop motion patch
             </h2>
+            <p className="mt-2 text-muted">
+              Adult motion sickness patches — 20 per box, ginger extract and
+              menthol. Sold on Amazon.
+            </p>
+            <div className="mt-5">
+              <AmazonButton>Shop motion patch on Amazon</AmazonButton>
+            </div>
+            <h3 className="mt-8 text-lg font-extrabold text-navy">
+              Also from the P6 family
+            </h3>
+            <p className="mt-2 text-sm text-muted">
+              Need a kids format or a washable wristband? Those live on P6
+              Health.
+            </p>
             <ul className="mt-4 space-y-2 font-bold">
-              <li>
-                <a
-                  className="text-navy hover:text-sky"
-                  href={P6.kidsBands}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  P6 Original Nausea Relief Bands (kids size)
-                </a>
-              </li>
               <li>
                 <a
                   className="text-navy hover:text-sky"
@@ -95,6 +87,16 @@ export function BlogPost() {
               <li>
                 <a
                   className="text-navy hover:text-sky"
+                  href={P6.kidsBands}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  P6 Original Nausea Relief Bands (kids size)
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-navy hover:text-sky"
                   href={P6.adultBands}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -103,9 +105,6 @@ export function BlogPost() {
                 </a>
               </li>
             </ul>
-            <div className="mt-6">
-              <AmazonButton>Shop motion patch on Amazon</AmazonButton>
-            </div>
           </aside>
         </div>
       </article>
