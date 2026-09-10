@@ -20,6 +20,33 @@ export function BlogIndex() {
         <h1 className="mt-2 max-w-3xl text-4xl font-extrabold text-navy sm:text-5xl">
           Motion sickness patch guides for real trips.
         </h1>
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {[
+            {
+              src: 'assets/p6/kids-bands-pink-blue.jpg',
+              alt: 'P6 kids nausea relief bands',
+            },
+            {
+              src: 'assets/p6/kids-patches-hero.jpg',
+              alt: 'P6 kids motion sickness patches',
+            },
+            {
+              src: 'assets/p6/adult-bands-white.jpg',
+              alt: 'P6 adult nausea relief bands',
+            },
+            {
+              src: 'assets/notebook-flatlay.png',
+              alt: 'motion patch box and sachets',
+            },
+          ].map((shot) => (
+            <img
+              key={shot.src}
+              src={asset(shot.src)}
+              alt={shot.alt}
+              className="aspect-square w-full rounded-2xl border border-line bg-white object-contain p-2"
+            />
+          ))}
+        </div>
         <p className="mt-4 max-w-2xl text-lg text-muted">
           How to wear a nausea relief patch, when to pack a wristband instead,
           and what{' '}

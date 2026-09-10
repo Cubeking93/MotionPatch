@@ -9,6 +9,8 @@ export type Block =
   | { type: 'p'; children: Inline[] }
   | { type: 'h2'; text: string }
   | { type: 'ul'; items: Inline[][] }
+  | { type: 'img'; src: string; alt: string; caption?: string }
+  | { type: 'imgs'; items: { src: string; alt: string }[] }
 
 export type Post = {
   slug: string
@@ -81,6 +83,13 @@ export const posts: Post[] = [
         ],
       },
       {
+        type: 'img',
+        src: 'assets/p6/kids-patches-how.jpg',
+        alt: 'P6 Motion Sickness Patches for Kids box showing apply-behind-the-ear directions',
+        caption:
+          'P6 Motion Sickness Patches for Kids (ages 6+) — a different product from adult motion patch.',
+      },
+      {
         type: 'h2',
         text: 'Kids and families: bands or a kids patch',
       },
@@ -100,6 +109,19 @@ export const posts: Post[] = [
             href: P6.kidsPatches,
           },
           ' (a different formula: ginger and cinnamon). The kids-patch insert wins if it disagrees with any page copy.',
+        ],
+      },
+      {
+        type: 'imgs',
+        items: [
+          {
+            src: 'assets/p6/kids-bands-pink-blue.jpg',
+            alt: 'P6 Nausea Relief Bracelet Kids box with pink and blue wristbands in cases',
+          },
+          {
+            src: 'assets/p6/kids-patches-hero.jpg',
+            alt: 'P6 Nausea Relief Patch Kids box, sachet, and round patches',
+          },
         ],
       },
       {
@@ -149,6 +171,12 @@ export const posts: Post[] = [
         ],
       },
       {
+        type: 'img',
+        src: 'assets/p6/adult-bands-white.jpg',
+        alt: 'P6 Original Nausea Relief Bands for Adults in white',
+        caption: 'Reusable P6 adult bands from p6health.com — wrist, not behind the ear.',
+      },
+      {
         type: 'h2',
         text: 'Choose P6 bands when you want a reusable wrist option',
       },
@@ -185,6 +213,19 @@ export const posts: Post[] = [
             href: P6.kidsPatches,
           },
           '. Do not put an adult travel patch on a child unless the label says you can — motion patch copy here is for the adult product.',
+        ],
+      },
+      {
+        type: 'imgs',
+        items: [
+          {
+            src: 'assets/p6/kids-bands-royal.jpg',
+            alt: 'P6 kids nausea relief bands in royal blue',
+          },
+          {
+            src: 'assets/p6/kids-patches-box.jpg',
+            alt: 'P6 Motion Sickness Patches for Kids product box',
+          },
         ],
       },
       {
@@ -226,6 +267,13 @@ export const posts: Post[] = [
         ],
       },
       {
+        type: 'img',
+        src: 'assets/p6/kids-bands-pink-pink.jpg',
+        alt: 'Pink P6 kids nausea relief wristbands in a travel case',
+        caption:
+          'P6 Original Nausea Relief Bands — the kids-size wristbands many families keep in the car.',
+      },
+      {
         type: 'h2',
         text: 'Kids who get car sick: start with P6 bands',
       },
@@ -246,6 +294,12 @@ export const posts: Post[] = [
           },
           '.',
         ],
+      },
+      {
+        type: 'img',
+        src: 'assets/p6/kids-patches-lifestyle.jpg',
+        alt: 'P6 kids motion sickness patches lifestyle product photo',
+        caption: 'P6 Motion Sickness Patches for Kids, ages 6+ only — see the label on p6health.com.',
       },
       {
         type: 'p',
@@ -305,6 +359,12 @@ export const posts: Post[] = [
         ],
       },
       {
+        type: 'img',
+        src: 'assets/p6/kids-patches-hero.jpg',
+        alt: 'P6 kids nausea relief patches box, sachet, and patches',
+        caption: 'P6 kids patches (6+) if a wristband is not the right fit for that child.',
+      },
+      {
         type: 'h2',
         text: 'Kids on the boat',
       },
@@ -326,6 +386,19 @@ export const posts: Post[] = [
           ' when that label fits. Adults who want a wrist option on deck can add ',
           { label: 'P6 adult bands', href: P6.adultBands },
           '.',
+        ],
+      },
+      {
+        type: 'imgs',
+        items: [
+          {
+            src: 'assets/p6/kids-bands-white-pink.jpg',
+            alt: 'White and pink P6 kids nausea relief bands',
+          },
+          {
+            src: 'assets/p6/adult-bands-royal.jpg',
+            alt: 'Royal blue P6 adult nausea relief bands',
+          },
         ],
       },
       {
@@ -368,6 +441,19 @@ export const posts: Post[] = [
         ],
       },
       {
+        type: 'imgs',
+        items: [
+          {
+            src: 'assets/p6/kids-bands-pink-blue.jpg',
+            alt: 'P6 kids nausea relief bracelet kit in pink and blue',
+          },
+          {
+            src: 'assets/p6/adult-bands-white-pink.jpg',
+            alt: 'P6 adult nausea relief bands in white and pink',
+          },
+        ],
+      },
+      {
         type: 'h2',
         text: 'What to pack for a family flight',
       },
@@ -388,6 +474,12 @@ export const posts: Post[] = [
           { label: 'p6health.com', href: P6.home },
           '.',
         ],
+      },
+      {
+        type: 'img',
+        src: 'assets/p6/kids-patches-box.jpg',
+        alt: 'P6 Motion Sickness Patches for Kids box',
+        caption: 'Kids patches are a separate P6 SKU — ages 6+ only, ginger and cinnamon.',
       },
       {
         type: 'p',

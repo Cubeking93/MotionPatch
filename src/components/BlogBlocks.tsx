@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import type { Block, Inline } from '@/content/posts'
+import { asset } from '@/lib/asset'
 
 function InlineBits({ bits }: { bits: Inline[] }) {
   return (
@@ -45,6 +46,45 @@ export function BlogBlocks({ blocks }: { blocks: Block[] }) {
             >
               {block.text}
             </h2>
+          )
+        }
+        if (block.type === 'img') {
+          return (
+            <figure key={index} className="overflow-hidden rounded-2xl bg-mist">
+              <img
+                src={asset(block.src)}
+                alt={block.alt}
+                className="mx-auto w-full max-h-[28rem] object-contain bg-white"
+                loading="lazy"
+              />
+              {block.caption ? (
+                <figcaption className="px-4 py-3 text-sm font-semibold text-muted">
+                  {block.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          )
+        }
+        if (block.type === 'imgs') {
+          return (
+            <div
+              key={index}
+              className="grid gap-3 sm:grid-cols-2"
+            >
+              {block.items.map((item) => (
+                <figure
+                  key={item.src}
+                  className="overflow-hidden rounded-2xl border border-line bg-white"
+                >
+                  <img
+                    src={asset(item.src)}
+                    alt={item.alt}
+                    className="h-64 w-full object-contain p-3"
+                    loading="lazy"
+                  />
+                </figure>
+              ))}
+            </div>
           )
         }
         if (block.type === 'ul') {

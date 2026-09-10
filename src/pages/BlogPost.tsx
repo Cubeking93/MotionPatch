@@ -51,6 +51,23 @@ export function BlogPost() {
           <BlogBlocks blocks={post.body} />
 
           <aside className="mt-12 rounded-2xl bg-mist p-6">
+            <div className="mb-5 grid grid-cols-3 gap-2">
+              <img
+                src={asset('assets/p6/kids-bands-royal.jpg')}
+                alt="P6 kids bands"
+                className="aspect-square w-full rounded-xl bg-white object-contain p-1"
+              />
+              <img
+                src={asset('assets/p6/kids-patches-hero.jpg')}
+                alt="P6 kids patches"
+                className="aspect-square w-full rounded-xl bg-white object-contain p-1"
+              />
+              <img
+                src={asset('assets/p6/adult-bands-white.jpg')}
+                alt="P6 adult bands"
+                className="aspect-square w-full rounded-xl bg-white object-contain p-1"
+              />
+            </div>
             <h2 className="text-xl font-extrabold text-navy">
               Also from the P6 family
             </h2>
