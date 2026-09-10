@@ -57,17 +57,31 @@ The first push to `main` deploys the site to:
 
 (If you named the repo something else, that name is the path.)
 
-### 3. Optional: attach motionpatch.com later (GoDaddy)
+### 3. Connect motionpatch.com (GoDaddy)
 
-`motionpatch.com` is still parked at GoDaddy. When you are ready:
+The GitHub side is already set to `www.motionpatch.com` (`public/CNAME`, Pages custom domain, build base `/`).
 
-1. In the repo: **Settings → Pages → Custom domain** → `www.motionpatch.com`
-2. In the workflow, change `VITE_BASE` to `/` (custom domains use the site root)
-3. In GoDaddy DNS, remove the parked / for-sale forwarding, then add:
-   - **CNAME** `www` → `<your-github-username>.github.io`
-   - **A** records on `@` to GitHub Pages: `192.168.2.1`, `192.168.2.2`, `172.16.0.4`, `10.10.0.2`
+You change DNS at GoDaddy. Keep GoDaddy as the registrar.
 
-Keep GoDaddy as the registrar. You are only changing DNS.
+1. Log in at [dcc.godaddy.com](https://dcc.godaddy.com) → **motionpatch.com** → **DNS**.
+2. Turn **off** the parked / “for sale” / forwarding page (the current `/lander` redirect).
+3. Delete existing **A**, **CNAME**, **Forwarding**, and **Parked** records for `@` and `www` (leave MX alone if you add email later).
+4. Add these records:
+
+| Type | Name / Host | Value | TTL |
+| --- | --- | --- | --- |
+| A | `@` | `192.168.2.1` | 600 |
+| A | `@` | `192.168.2.2` | 600 |
+| A | `@` | `172.16.0.4` | 600 |
+| A | `@` | `10.10.0.2` | 600 |
+| CNAME | `www` | `cubeking93.github.io` | 600 |
+
+5. Save. Wait (often 10–60 minutes, sometimes up to 48 hours).
+6. In the GitHub repo: **Settings → Pages** → confirm `www.motionpatch.com` and check **Enforce HTTPS** once the certificate is ready.
+
+After that, `https://www.motionpatch.com` is the site. `motionpatch.com` should redirect to `www`.
+
+Until DNS finishes, the old `https://cubeking93.github.io/MotionPatch/` URL may look broken. Use the custom domain once it resolves.
 
 ### After the Amazon listing exists
 

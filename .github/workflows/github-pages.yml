@@ -30,7 +30,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_BASE: /
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5
