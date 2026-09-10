@@ -9,7 +9,7 @@ const benefits = [
   {
     icon: Leaf,
     title: 'All-natural & drug-free',
-    body: 'Ginger extract, Datura flower extract, and menthol — no drowsy medicine.',
+    body: 'Ginger extract and menthol — no drowsy medicine.',
   },
   {
     icon: Clock3,
@@ -184,7 +184,7 @@ export function Home() {
             Powered by nature
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Each patch uses Ginger Extract, Datura Flower Extract, and Menthol.
+            Each patch uses Ginger Extract and Menthol.
             All-natural and drug-free — so you can stay alert on the road, on
             the water, or in the air.
           </p>

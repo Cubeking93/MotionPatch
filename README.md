@@ -105,7 +105,7 @@ We only use label-level facts. Duration is **12 hours** everywhere (not 72h).
 - All-natural & drug-free; non-drowsy & fast-acting; safe, comfortable, easy to use
 - Targets multiple types of motion sickness
 - Box: 20 patches · sachets: 2 patches
-- Ingredients: Ginger Extract, Datura Flower Extract, Menthol
+- Ingredients: Ginger Extract, Menthol
 - External use; gel side behind the earlobe; 1–3×/day; up to 12 hours per patch
 - Store sealed, cool and dry
 - Made in China

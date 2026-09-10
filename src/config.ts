@@ -14,6 +14,6 @@ export const PRODUCT = {
   durationHours: 12,
   boxCount: 20,
   sachetCount: 2,
-  ingredients: ['Ginger Extract', 'Datura Flower Extract', 'Menthol'] as const,
+  ingredients: ['Ginger Extract', 'Menthol'] as const,
   madeIn: 'China',
 }
