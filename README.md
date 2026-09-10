@@ -32,54 +32,46 @@ Replace that default with the live Amazon product listing when it is ready. No o
 
 Brand contact email lives in the same file as `CONTACT_EMAIL` (default `hello@motionpatch.com`).
 
-## Host it so people can visit motionpatch.com
+## Host it for free on GitHub Pages
 
-You do **not** need the Amazon listing first. Ship the site with the placeholder URL, then change `AMAZON_PRODUCT_URL` later and redeploy (or just push to `main`).
+You do **not** need the Amazon listing first. Shop buttons keep opening Amazon.com until you paste the real listing and push.
 
-`motionpatch.com` is currently parked at GoDaddy. Hosting is two steps: put the site on Vercel or Netlify, then point the domain at that host.
+This repo includes a GitHub Actions workflow (`.github/workflows/github-pages.yml`) that builds the site and publishes it on every push to `main`.
 
-### 1. Put this repo on GitHub
+### 1. Create a public GitHub repo
 
-Vercel and Netlify deploy from GitHub. If this project is still only in Cursor, use **Create repo** so you have a normal GitHub repository, then push `main`.
+Pages is free on a **public** repository.
 
-### 2. Fastest host: Vercel (recommended)
+- In Cursor, use **Create repo**, or
+- On GitHub: **New repository**, name it `motion-patch`, set visibility to **Public**, do not add a README (this project already has one).
 
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-2. **Add New… → Project** and import the `motion-patch` repo.
-3. Leave the Vite defaults:
-   - Build command: `npm run build`
-   - Output directory: `dist`
-4. Click **Deploy**.
+Then tell the agent the repo URL, or add the remote and push `main`.
 
-You immediately get a public URL like `https://motion-patch-xxxx.vercel.app`. That is already shareable. SSL is automatic.
+### 2. Turn on Pages
 
-### 3. Attach motionpatch.com (GoDaddy)
+In the GitHub repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-1. In the Vercel project: **Settings → Domains → Add** `motionpatch.com`. Accept the prompt to also add `www.motionpatch.com`.
-2. Vercel shows the exact DNS records. Typical values (confirm in the dashboard):
-   - **A** record, host `@`, value `10.0.1.2`
-   - **CNAME** record, host `www`, value from the domain card (a `*.vercel-dns-*.com` target)
-3. In [GoDaddy DNS](https://dcc.godaddy.com):
-   - Turn off / remove the **parked / for sale** forwarding (the current `/lander` redirect).
-   - Delete the old A / CNAME / forwarding records for `@` and `www`.
-   - Add the two records Vercel showed.
-4. Wait for DNS (often minutes, sometimes up to 48 hours). Vercel issues the HTTPS certificate once the records resolve.
+The first push to `main` deploys the site to:
 
-After that, `https://www.motionpatch.com` and `https://motionpatch.com` serve this site.
+`https://<your-github-username>.github.io/motion-patch/`
 
-Keep GoDaddy as the registrar. You are only changing DNS records, not transferring the domain.
+(If you named the repo something else, that name is the path.)
 
-### Netlify instead
+### 3. Optional: attach motionpatch.com later (GoDaddy)
 
-Same idea: import the GitHub repo at [netlify.com](https://www.netlify.com). This repo already has `netlify.toml` and `public/_redirects`.
+`motionpatch.com` is still parked at GoDaddy. When you are ready:
 
-- Build command: `npm run build`
-- Publish directory: `dist`
-- Then **Domain management → Add custom domain** and use the DNS records Netlify displays (or switch the domain’s nameservers to Netlify).
+1. In the repo: **Settings → Pages → Custom domain** → `www.motionpatch.com`
+2. In the workflow, change `VITE_BASE` to `/` (custom domains use the site root)
+3. In GoDaddy DNS, remove the parked / for-sale forwarding, then add:
+   - **CNAME** `www` → `<your-github-username>.github.io`
+   - **A** records on `@` to GitHub Pages: `192.168.2.1`, `192.168.2.2`, `172.16.0.4`, `10.10.0.2`
+
+Keep GoDaddy as the registrar. You are only changing DNS.
 
 ### After the Amazon listing exists
 
-Edit `src/config.ts`, commit, push to `main`. Vercel/Netlify rebuilds automatically. No domain or hosting change.
+Edit `src/config.ts`, commit, push to `main`. Pages rebuilds automatically.
 
 Point of sale stays on Amazon. Do not add a storefront later without an explicit product decision.
 
