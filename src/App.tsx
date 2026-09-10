@@ -6,6 +6,8 @@ import { Contact } from '@/pages/Contact'
 import { Faq } from '@/pages/Faq'
 import { Home } from '@/pages/Home'
 import { HowToUse } from '@/pages/HowToUse'
+import { BlogIndex } from '@/pages/BlogIndex'
+import { BlogPost } from '@/pages/BlogPost'
 import { NotFound } from '@/pages/NotFound'
 
 function ScrollToTop() {
@@ -32,6 +34,8 @@ export default function App() {
           <Route path="how-to-use" element={<HowToUse />} />
           <Route path="faq" element={<Faq />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="blog" element={<BlogIndex />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

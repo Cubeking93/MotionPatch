@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { AmazonButton } from '@/components/AmazonButton'
 import { Wordmark } from '@/components/Wordmark'
+import { P6 } from '@/config'
 import { cn } from '@/lib/utils'
 
 const NAV = [
@@ -10,6 +11,7 @@ const NAV = [
   { to: '/about', label: 'About' },
   { to: '/how-to-use', label: 'How to use' },
   { to: '/faq', label: 'FAQ' },
+  { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -123,6 +125,16 @@ export function Layout() {
               <Link className="text-navy hover:text-sky" to="/contact">
                 Contact the brand
               </Link>
+            </p>
+            <p className="mt-2 text-sm font-semibold">
+              <a
+                className="text-navy hover:text-sky"
+                href={P6.home}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                P6 Health
+              </a>
             </p>
           </div>
         </div>

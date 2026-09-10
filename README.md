@@ -95,6 +95,7 @@ Point of sale stays on Amazon. Do not add a storefront later without an explicit
 - `/about` — brand under P6, mission
 - `/how-to-use` — directions, tips, label warnings
 - `/faq` — Amazon orders, 12-hour wear, ingredients, who it is for
+- `/blog` — travel nausea guides; backlinks to p6health.com (kids bands, kids patches, adult bands)
 - `/contact` — mailto the brand; order support goes to Amazon
 
 ## Product facts used on the site

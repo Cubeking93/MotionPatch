@@ -5,9 +5,10 @@ type SeoProps = {
   title: string
   description: string
   path: string
+  keywords?: string
 }
 
-export function Seo({ title, description, path }: SeoProps) {
+export function Seo({ title, description, path, keywords }: SeoProps) {
   useEffect(() => {
     document.title = title
 
@@ -24,6 +25,7 @@ export function Seo({ title, description, path }: SeoProps) {
     }
 
     setMeta('name', 'description', description)
+    if (keywords) setMeta('name', 'keywords', keywords)
     setMeta('property', 'og:title', title)
     setMeta('property', 'og:description', description)
     setMeta('property', 'og:url', `${SITE_URL}${path}`)
@@ -39,7 +41,7 @@ export function Seo({ title, description, path }: SeoProps) {
       document.head.appendChild(canonical)
     }
     canonical.href = `${SITE_URL}${path}`
-  }, [title, description, path])
+  }, [title, description, path, keywords])
 
   return null
 }

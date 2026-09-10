@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { AmazonButton } from '@/components/AmazonButton'
 import { Seo } from '@/components/Seo'
 import { PRODUCT } from '@/config'
+import { posts } from '@/content/posts'
 import { asset } from '@/lib/asset'
 
 const benefits = [
@@ -235,6 +236,40 @@ export function Home() {
           width={1464}
           height={600}
         />
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-sky">
+            Journal
+          </p>
+          <h2 className="mt-2 text-3xl font-extrabold text-navy sm:text-4xl">
+            Motion sickness patch guides
+          </h2>
+          <ul className="mt-8 grid gap-6 md:grid-cols-3">
+            {posts.slice(0, 3).map((post) => (
+              <li key={post.slug}>
+                <Link
+                  className="block rounded-2xl border border-line p-5 hover:bg-mist"
+                  to={`/blog/${post.slug}`}
+                >
+                  <h3 className="text-lg font-extrabold text-navy">
+                    {post.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-muted">{post.description}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6">
+            <Link
+              className="font-extrabold text-navy underline decoration-yellow decoration-4 underline-offset-4"
+              to="/blog"
+            >
+              All travel nausea guides
+            </Link>
+          </p>
+        </div>
       </section>
 
       <section className="bg-navy">
