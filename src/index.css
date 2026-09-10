@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Nunito', ui-rounded, ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #1b3a8c;
+  --color-navy-deep: #12275f;
+  --color-ink: #1a2744;
+  --color-sky: #00a4e4;
+  --color-sky-soft: #e8f6fc;
+  --color-yellow: #ffd100;
+  --color-yellow-soft: #fff6c2;
+  --color-mist: #f4f7fb;
+  --color-muted: #5b6b80;
+  --color-line: #d7e0ea;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background: var(--color-yellow);
+  color: var(--color-navy-deep);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-sky);
+  outline-offset: 3px;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 180ms ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 180ms ease-out;
+}
