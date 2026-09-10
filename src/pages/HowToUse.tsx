@@ -1,6 +1,7 @@
 import { AmazonButton } from '@/components/AmazonButton'
 import { Seo } from '@/components/Seo'
 import { PRODUCT } from '@/config'
+import { asset } from '@/lib/asset'
 
 const steps = [
   {
@@ -55,7 +56,7 @@ export function HowToUse() {
       </section>
 
       <img
-        src="/assets/product-sunrise.png"
+        src={asset('assets/product-sunrise.png')}
         alt="motion patch 20-patch box and 2-patch sachet with a 12-hour effectiveness badge"
         className="mx-auto w-full max-w-[1464px]"
         width={1464}
@@ -103,7 +104,7 @@ export function HowToUse() {
 
       <section>
         <img
-          src="/assets/notebook-flatlay.png"
+          src={asset('assets/notebook-flatlay.png')}
           alt="motion patch box, sachets, and loose patches on a table beside a notebook"
           className="mx-auto w-full max-w-[1464px]"
           width={1464}

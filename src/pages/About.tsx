@@ -1,6 +1,7 @@
 import { AmazonButton } from '@/components/AmazonButton'
 import { Seo } from '@/components/Seo'
 import { PARENT_BRAND } from '@/config'
+import { asset } from '@/lib/asset'
 
 export function About() {
   return (
@@ -26,7 +27,7 @@ export function About() {
           </p>
         </div>
         <img
-          src="/assets/hero-brand-boat.png"
+          src={asset('assets/hero-brand-boat.png')}
           alt="motion patch and P6 wordmark over a calm lake with a sailor on the bow"
           className="mx-auto w-full max-w-[1464px]"
           width={1464}

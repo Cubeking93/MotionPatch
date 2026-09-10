@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { AmazonButton } from '@/components/AmazonButton'
 import { Seo } from '@/components/Seo'
 import { PRODUCT } from '@/config'
+import { asset } from '@/lib/asset'
 
 const benefits = [
   {
@@ -67,7 +68,7 @@ export function Home() {
 
       <section className="bg-white">
         <img
-          src="/assets/hero-brand-boat.png"
+          src={asset('assets/hero-brand-boat.png')}
           alt="motion patch wordmark beside a traveler on a sailboat, with three beige patches"
           className="mx-auto w-full max-w-[1464px]"
           width={1464}
@@ -100,7 +101,7 @@ export function Home() {
 
       <section>
         <img
-          src="/assets/hero-before-after.png"
+          src={asset('assets/hero-before-after.png')}
           alt="Split scene: motion sickness in a car, then a smooth ride with a badge that reads effective for up to 12 hours"
           className="mx-auto w-full max-w-[1464px]"
           width={1464}
@@ -132,7 +133,7 @@ export function Home() {
           </div>
         </div>
         <img
-          src="/assets/benefits-sailboat.png"
+          src={asset('assets/benefits-sailboat.png')}
           alt="Woman on a sailboat holding a motion patch box, with benefit callouts"
           className="mx-auto mt-12 w-full max-w-[1464px]"
           width={1464}
@@ -172,7 +173,7 @@ export function Home() {
 
       <section className="bg-white">
         <img
-          src="/assets/ingredients-ginger.png"
+          src={asset('assets/ingredients-ginger.png')}
           alt="motion patch box surrounded by ginger, mint, and beige patches. Headline: all-natural and drug-free with menthol and ginger"
           className="mx-auto w-full max-w-[1464px]"
           width={1464}
@@ -218,7 +219,7 @@ export function Home() {
           </ul>
         </div>
         <img
-          src="/assets/applications-mosaic.png"
+          src={asset('assets/applications-mosaic.png')}
           alt="Lifestyle mosaic of flying, fishing, kayaking, cruising, and theme-park rides"
           className="mx-auto mt-8 w-full max-w-[1464px]"
           width={1464}
@@ -228,7 +229,7 @@ export function Home() {
 
       <section className="py-12">
         <img
-          src="/assets/notebook-flatlay.png"
+          src={asset('assets/notebook-flatlay.png')}
           alt="Notebook with a crossed-out motion sickness list next to a 20-patch box and 2-patch sachets"
           className="mx-auto w-full max-w-[1464px]"
           width={1464}
@@ -261,7 +262,7 @@ export function Home() {
             </div>
           </div>
           <img
-            src="/assets/product-sunrise.png"
+            src={asset('assets/product-sunrise.png')}
             alt="motion patch box and sachet on a dock, with a 12-hour badge and a cruise ship in the background"
             className="w-full rounded-2xl"
             width={1464}
